@@ -1,7 +1,0 @@
-C:\My-files\GitHub\CPSC1517-Fall-2025\in-class-assessment-3-madisonladewig\src\AssessmentSolution\eToursApp\wwwroot\app.css
-C:\My-files\GitHub\CPSC1517-Fall-2025\in-class-assessment-3-madisonladewig\src\AssessmentSolution\eToursApp\wwwroot\bootstrap\bootstrap.min.css
-C:\My-files\GitHub\CPSC1517-Fall-2025\in-class-assessment-3-madisonladewig\src\AssessmentSolution\eToursApp\wwwroot\bootstrap\bootstrap.min.css.map
-wwwroot\app.css
-wwwroot\bootstrap\bootstrap.min.css
-wwwroot\bootstrap\bootstrap.min.css.map
-wwwroot\favicon.png
