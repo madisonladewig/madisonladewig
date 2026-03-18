@@ -1,0 +1,290 @@
+body {
+    font-size: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #254C65;
+    border-radius: 25px;
+    width: 958px;
+    height: 124px;
+    color: #ffffff;
+    margin-top: 4px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+h1 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    width: 506px;
+    /*line-height=48/32=1.5*/
+}
+
+header p {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    /*line-height=24/16=1.5*/
+}
+
+.title {
+    padding: 31px 60px 26px 39px;
+}
+
+header nav {
+    padding: 48px 50px 51px 0px;
+}
+
+header ul {
+    gap: 35px;
+}
+
+header li {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+main p {
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.banner {
+    background-color: #254C65;
+    background: url("../img/legislative-building.png") no-repeat;
+    width: 960px;
+    height: 280px;
+    margin-top: 24px;
+    padding-top: 54px;
+    padding-left: 11px;
+}
+
+.veil {
+    width: 859px;
+    height: 208px;
+    background-color: rgb(37, 76, 101, 0.6);
+    border-radius: 25px;
+}
+
+h2 {
+    font-family: "Commissioner", sans-serif;
+    color: #F6FCFF;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    /*line-height=90/60=1.5*/
+}
+
+.veil-margin {
+    margin: 18px 16px 0px 29px;
+}
+
+.gap {
+    column-gap: 30px;
+}
+
+h3 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #254C65;
+    text-transform: uppercase;
+    line-height: 1.5;
+    padding: 16px 86px 18px 86px;
+    /*line-height=72/48=1.5*/
+}
+
+.bold {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: #254C65;
+    /*line-height=33/22=1.5*/
+}
+
+main {
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #EAEEF0;
+    width: 802px;
+    border-radius: 25px;
+    margin: 0px 80px 31px 80px;
+}
+
+fieldset {
+    border: none;
+    padding: 0 86px 48px 86px;
+}
+
+form div {
+    font-size: 16px;
+    color: #111827;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 24px 0px 0px 0px;
+}
+
+.no-date {
+    display: none;
+}
+
+label {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5px;
+    color: #111827;
+}
+
+input {
+    width: 295px;
+    height: 40px;
+    margin-top: 6px;
+}
+
+fieldset div:nth-child(2) input {
+    width: 630px;
+    padding-bottom: 0px;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0px;
+}
+
+legend {
+    font-family: "Commissioner", sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #254C65;
+    font-weight: bold;
+    width: 630px;
+}
+
+.button {
+    width: 260px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #254C65;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0px 296px 53px 246px;
+}
+
+.no-bottom-padding input:hover {
+    background-color: #FFFFFF;
+    color: #254C65;
+}
+
+footer {
+    background-color: #254C65;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+footer h2 {
+    font-size: 36px;
+    padding: 26px 272px 0px 272px;
+    margin-bottom: 16px;
+}
+
+footer nav {
+    padding: 16px 288px 26px 285px;
+}
+
+footer ul {
+    flex-wrap: wrap;
+    padding: 0px 288px 0px 285px;
+    justify-content: center;
+    row-gap: 11px;
+    display: flex;
+    column-gap: 39px;
+}
+
+footer li {
+    font-family: "Commissioner", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+hr {
+    width: 416px;
+    justify-content: center;
+    margin-bottom: 34px;
+    margin-top: 31px;
+}
+
+.icons {
+    gap: 53px;
+    justify-content: center;
+    padding-bottom: 26px;
+}
+
+footer p {
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    color: #ffffff;
+    padding-bottom: 28px;
+}
+
+footer p:nth-child(1) {
+    padding-bottom: 0px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #78DCFF;
+}
+
+h1 a:hover {
+    text-decoration: none;
+}
+
+span {
+    color: #B91C1C;
+}

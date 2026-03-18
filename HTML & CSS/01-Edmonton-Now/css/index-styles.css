@@ -1,0 +1,324 @@
+body {
+    font-size: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #254C65;
+    border-radius: 25px;
+    width: 958px;
+    height: 124px;
+    color: #ffffff;
+    margin-top: 4px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+h1 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    width: 506px;
+    /*line-height=48/32=1.5*/
+}
+
+header p {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    /*line-height=24/16=1.5*/
+}
+
+.title {
+    padding: 31px 60px 26px 39px;
+}
+
+header nav {
+    padding: 48px 50px 51px 0px;
+}
+
+header ul {
+    gap: 35px;
+}
+
+header li {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.flex {
+    display: flex;
+}
+
+.banner {
+    background-color: #254C65;
+    background: url("../img/edmonton-image.jpg") no-repeat;
+    width: 960px;
+    height: 280px;
+    margin-top: 24px;
+    padding-top: 54px;
+    padding-left: 11px;
+}
+
+.veil {
+    width: 859px;
+    height: 208px;
+    background-color: rgb(37, 76, 101, 0.6);
+    border-radius: 25px;
+}
+
+h2 {
+    font-family: "Commissioner", sans-serif;
+    color: #F6FCFF;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    /*line-height=90/60=1.5*/
+}
+
+.veil-margin {
+    margin: 18px 16px 0px 29px;
+}
+
+main p {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5;
+    /*line-height=27/18=1.5*/
+}
+
+.topics {
+    background-color: #EAEEF0;
+    width: 960px;
+    height: 700px;
+    border-radius: 25px;
+}
+
+.local {
+    width: 865px;
+    background-color: #ffffff;
+    padding: 33px 21px 18px 21px;
+    border-radius: 25px;
+    margin: 12px 27px 29px 27px;
+}
+
+p a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.gap {
+    gap: 29px;
+}
+
+h3 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #254C65;
+    text-transform: uppercase;
+    line-height: 1.5;
+    padding: 14px 447px 0px 26px;
+    /*line-height=72/48=1.5*/
+}
+
+.garden-heading {
+    width: 562px;
+    padding: 0px;
+}
+
+.local p {
+    color: #111827;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    width: 450px;
+    /*line-height=27/18=1.5*/
+}
+
+.bold {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-family: "Commissioner", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: #254C65;
+    /*line-height=33/22=1.5*/
+}
+
+.plot {
+    margin-top: 14px;
+}
+
+figure {
+    width: 273px;
+    height: 363px;
+    padding: 31px 29px 16px 48px;
+}
+
+figcaption {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+    width: 273px;
+    height: 363px;
+    /*line-height=25/16=1.5*/
+}
+
+.community {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: black;
+    padding: 6px 47px 0px 0px;
+    width: 562px;
+}
+
+table,
+th,
+td {
+    border: 2px solid #111827;
+    border-spacing: 0;
+    background-color: #ffffff;
+}
+
+table {
+    width: 561px;
+    height: 97px;
+    margin-bottom: 30px;
+    table-layout: fixed;
+}
+
+table tr:nth-child(2) th {
+    font-weight: normal;
+}
+
+.table-title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #111827;
+    padding: 8px 47px 5px 31px;
+}
+
+main {
+    margin-bottom: 30px;
+}
+
+.button {
+    width: 260px;
+    color: #ffffff;
+    background-color: #254C65;
+    border-radius: 25px;
+    padding: 8px 27px 8px 27px;
+    line-height: 1.5;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.community a:hover {
+    background-color: #ffffff;
+    color: #254C65;
+    border: 2px solid #254C65;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #254C65;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+footer h2 {
+    font-size: 36px;
+    padding: 26px 272px 0px 272px;
+    margin-bottom: 16px;
+}
+
+footer nav {
+    padding: 16px 288px 26px 285px;
+}
+
+footer ul {
+    flex-wrap: wrap;
+    padding: 0px 288px 0px 285px;
+    justify-content: center;
+    column-gap: 97px;
+    row-gap: 11px;
+}
+
+footer li {
+    font-family: "Commissioner", sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+hr {
+    width: 416px;
+    justify-content: center;
+    margin-bottom: 34px;
+    margin-top: 31px;
+}
+
+.icons {
+    gap: 53px;
+    justify-content: center;
+    padding-bottom: 26px;
+}
+
+footer p {
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+    color: #ffffff;
+    padding-bottom: 28px;
+}
+
+footer p:nth-child(1) {
+    padding-bottom: 0px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #78DCFF;
+}
+
+h1 a:hover {
+    text-decoration: none;
+}

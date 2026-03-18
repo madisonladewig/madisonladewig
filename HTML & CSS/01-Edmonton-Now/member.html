@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BECOME A MEMBER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/member-styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="flex">
+            <div class="title">
+                <h1><a href="index.html">Edmonton Now</a></h1>
+                <p>
+                    get to know your city
+                </p>
+            </div>
+            <nav>
+                <ul class="flex">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="member.html">Membership</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="banner">
+                <div class="veil">
+                    <h2 class="veil-margin">Become A Member</h2>
+                    <p class="veil-margin">
+                        Want more information about membership and the benefits?
+                    </p>
+                </div>
+            </section>
+            <form>
+                <h3>Let's connect!</h3>
+                <fieldset class="flex gap">
+                    <legend>Contact Information</legend>
+                    <div>
+                        <label for="name">Name<span> *(required)</span></label><br>
+                        <input type="text" id="name" name="contact" required><br>
+                    </div>
+
+                    <div>
+                        <label for="address">Address</label><br>
+                        <input type="text" id="address" name="contact"><br>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label><br>
+                        <input type="text" id="city" name="contact"><br>
+                    </div>
+
+                    <div>
+                        <label for="email">Email<span> *(required)</span></label><br>
+                        <input type="email" id="email" name="contact" required><br>
+                    </div>
+
+                    <div>
+                        <label for="telephone">Telephone</label><br>
+                        <input type="tel" id="telephone" name="contact"><br>
+                    </div>
+                </fieldset>
+                <fieldset class="flex gap no-bottom-padding">
+                    <legend>Care to donate?</legend>
+                    <div>
+                        <label for="cc">Credit Card Number</label><br>
+                        <input type="text" id="cc" name="donate" maxlength="16" pattern="[0-9]"><br>
+                    </div>
+
+                    <div>
+                        <label for="expiry">Expiry Date</label><br>
+                        <input type="date" id="expiry" name="donate"><br>
+                    </div>
+
+                    <div>
+                        <label for="security-code">Security Code</label><br>
+                        <input type="password" id="security-code" name="donate" pattern="[0-9]"><br>
+                    </div>
+                </fieldset>
+                <div class="no-bottom-padding">
+                    <input class="button" type="submit" value="Donate Today">
+                </div>
+            </form>
+        </main>
+        <footer>
+            <h2>Edmonton Now</h2>
+            <div>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div>
+                <ul class="icons flex">
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="img/facebook-icon.svg"
+                                alt="Facebook icon" width="47" height="47"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="img/instagram-icon.svg"
+                                alt="Instagram icon" width="47" height="47"></a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank"><img src="img/tiktok-icon.svg"
+                                alt="Tiktok icon" width="47" height="47"></a></li>
+                </ul>
+            </div>
+            <div>
+                <p>Copyright &copy; 2024</p>
+                <p>For Educational Purposes Only</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+        <footer class="text-xl-center">
+            <br /><br />
+            <p>
+                <!--
+                    setup instruction
+                    place your name on the footer
+                -->
+                &copy;copyright CPSC1517 Assessment 3 for Eductional Purposes by your name here; all rights reserved
+            </p>
+        </footer>
+    </main>
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>

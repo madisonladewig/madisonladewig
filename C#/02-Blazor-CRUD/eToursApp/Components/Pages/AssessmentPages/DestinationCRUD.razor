@@ -1,0 +1,233 @@
+﻿@page "/destinationcrud"
+<PageTitle>Add Destination</PageTitle>
+@rendermode InteractiveServer
+
+@using eToursSystem.BLL;
+@using eToursSystem.Entities;
+
+<h1>Destination CRUD</h1>
+<h4>adding new destination for a tour</h4>
+
+<div class="row">
+    <div class="col-md-8">
+        <blockquote style="border-left: 5px solid #333; background-color: #f0f0f0; padding: 10px; margin-left: 20px;">
+            This page will be used to add new eTour tour destination. The user will enter data that is
+            related to the destination. Upon attempting the addition, the destination service will verify
+            the destination date is today or in the future. If the date is in the past, the service will throw
+            an AurgumentException to the user.
+        </blockquote>
+    </div>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(feedBackMsg))
+{
+    <div class="alert alert-info">
+        <p>@feedBackMsg</p>
+    </div>
+}
+
+<div class="row">
+
+    <EditForm EditContext="@editContext">
+        <DataAnnotationsValidator/>
+
+        <ValidationSummary />
+
+        <div class="offset-3 col-md-6">
+
+            <div>
+                <label for="tour" class="form-label">Tour</label>
+                <InputSelect id="tour" @bind-Value="destinationInfo.TourID" class="form-control">
+                    <option value="0">...select tour...</option>
+                    @foreach(var item in tourInfo)
+                    {
+                        <option value="@item.TourID">@item.Name</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => destinationInfo.TourID)"/>
+            </div>
+
+            <br />
+
+            <div>
+                <label for="location" class="form-label">Location</label>
+                <InputText id="location" class="form-control" @bind-Value="destinationInfo.Location">
+                </InputText>
+                <ValidationMessage For="@(() => destinationInfo.Location)" />
+            </div>
+
+            <br />
+
+            <div>
+                <label id="country" class="form-label">Country (optional)</label>
+                <InputText id="country" class="form-control" @bind-Value=destinationInfo.Country></InputText>
+            </div>
+
+            <br />
+
+            <div>
+                <label for="visit-date" class="form-label">Visit Date</label>
+                <InputDate id="visit-date" class="form-control" @bind-Value="destinationInfo.VisitDate"></InputDate>
+                <ValidationMessage For="@(() => destinationInfo.VisitDate)"/>
+            </div>
+
+            <br />
+
+            <label for="duration" class="form-label">Stay Duration</label>
+            <InputNumber id="duration" class="form-control"
+            @bind-Value="destinationInfo.StayDuration"
+            placeholder="eg 5.5" step="0.1"/>
+            <ValidationMessage For="@(() => destinationInfo.StayDuration)" />
+
+        </div>
+    </EditForm>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-12 text-center">
+
+        <button type="submit" @onclick="OnSave" class="btn btn-outline-primary rounded-pill" style="width:160px;">Save</button>
+        &nbsp;&nbsp;
+        <button type="submit" @onclick="OnClear" class="btn btn-outline-secondary rounded-pill" style="width:160px;">Clear</button>
+        &nbsp;&nbsp;
+        <button type="submit" @onclick="OnQuery" class="btn btn-outline-secondary rounded-pill" style="width:160px;">Itineraries</button>
+    </div>
+</div>
+
+@code {
+    private string feedBackMsg = "";
+
+
+    private Tour currentTour = new();
+
+    // Injects interactive JS runtime (used for Save/Clear/Itineraries buttons to fire async)
+    // and a NavigationManager, used to route to new links (used for the Itineraries button).
+    [Inject]
+    private IJSRuntime JSRunTime { get; set; }
+
+    [Inject]
+    private NavigationManager _navManager { get; set; }
+
+    [Inject]
+    private DestinationServices _destinationServices { get; set; }
+    private Destination destinationInfo = new Destination();
+
+    [Inject]
+    private TourServices _tourServices { get; set; }
+    private List<Tour> tourInfo = new List<Tour>();
+
+    private EditContext editContext;
+    private ValidationMessageStore validationMessageStore;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        try
+        {
+            destinationInfo = new Destination();
+            destinationInfo.VisitDate = DateTime.Today;
+            tourInfo = _tourServices.Tour_GetList();
+            editContext = new EditContext(destinationInfo);
+            validationMessageStore = new ValidationMessageStore(editContext);      
+        }
+        catch(Exception ex)
+        {
+            feedBackMsg = $"System Error: {GetInnerException(ex).Message}";
+        }
+       
+    }
+
+    public Exception GetInnerException(Exception ex)
+    {
+        while (ex.InnerException != null)
+        {
+            ex = ex.InnerException;
+        }
+        return ex;
+    }
+
+    private void OnSave()
+    {
+        feedBackMsg = "";
+        validationMessageStore.Clear();
+
+        try
+        {
+            if (editContext.Validate())
+            {
+
+                if (destinationInfo.TourID == 0)
+                {
+                    throw new ArgumentNullException("You must select a tour company.");
+                }
+
+                if (destinationInfo.Location == null || destinationInfo.Location.Trim().Length == 0)
+                {
+                    throw new ArgumentNullException("You must provide a location for your trip.");
+                }
+
+                if (destinationInfo.StayDuration <= 0) ; 
+                {
+                    throw new ArgumentException("Your trip duration must be greater than 0.");
+                }
+
+                // The remainder of this method is complete. If we get errors, trigger message display;
+                // if not, save the object (already complete for you in the service layer).
+                if (editContext.GetValidationMessages().Any())
+                {
+                    editContext.NotifyValidationStateChanged();
+                }
+                else
+                {
+                    int newDestinationID = _destinationServices.Destination_AddDestination(destinationInfo);
+                    feedBackMsg = $"New destination (ID: {newDestinationID}) has been saved.";
+                }
+            }
+        }
+        catch (ArgumentNullException ex)
+        {
+            feedBackMsg = $"Missing Data: {GetInnerException(ex).Message}";
+        }
+        catch (ArgumentException ex)
+        {
+            feedBackMsg = $"Data Issue: {GetInnerException(ex).Message}";
+        }
+        catch (Exception ex)
+        {
+            feedBackMsg = $"System Error: {GetInnerException(ex).Message}";
+        }
+     
+    }
+
+    private async Task OnClear()
+    {
+
+        object[] messageline = new object[] { $"Unsaved data will be lost. Do you wish to continue?" };
+        if (await JSRunTime.InvokeAsync<bool>("confirm", messageline))
+        {
+            feedBackMsg = "";
+            validationMessageStore.Clear();
+
+            destinationInfo = new Destination();
+            destinationInfo.VisitDate = DateTime.Today;
+            editContext = new EditContext(destinationInfo);
+            validationMessageStore = new ValidationMessageStore(editContext);
+
+        }
+       
+    }
+
+    private async Task OnQuery()
+    {
+        object[] messageline = new object[] { $"Unsaved data will be lost. Do you wish to continue?" };
+        if (await JSRunTime.InvokeAsync<bool>("confirm", messageline))
+        {
+            destinationInfo = new Destination();
+            editContext = new EditContext(destinationInfo);
+            validationMessageStore = new ValidationMessageStore(editContext);
+            _navManager.NavigateTo("./itineraries");
+        }
+    }
+}
